@@ -17,4 +17,9 @@ class ParticleSystem {
             }
         }
     }
+    applyForce(force) {
+        for (let p of this.particles) {
+            p.acceleration.add(force);
+        }
+    }
 }

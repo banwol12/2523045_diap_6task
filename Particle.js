@@ -6,6 +6,7 @@ class Particle {
     this.lifespan = 255;
   }
 
+
   run() {
     this.update();
     this.display();
@@ -16,6 +17,7 @@ class Particle {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
     this.lifespan -= 2;
+    this.acceleration.mult(0);
   }
 
   // Method to display
