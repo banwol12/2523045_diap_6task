@@ -12,5 +12,7 @@ function draw() {
 }
 
 function mouseReleased() {
-  system.addParticle();
+  for (let i = 0; i < 10; i++) {
+    system.addParticle();
+  }
 }
