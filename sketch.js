@@ -7,10 +7,10 @@ function setup() {
 
 function draw() {
   background(51);
-
-  let turbulence = createVector(random(-0.1, 0.1), random(-0.1, 0.1));
-  
-  system.applyForce(turbulence);
-  system.addParticle();
+  system.setPosition(createVector(mouseX, mouseY));
   system.run();
+}
+
+function mouseReleased() {
+  system.addParticle();
 }
