@@ -4,6 +4,7 @@ class Particle {
     this.velocity = createVector(random(-1, 1), random(-1, 0));
     this.position = position.copy();
     this.lifespan = 255;
+    this.c = color(0, 180, 20);
   }
 
 
@@ -22,10 +23,10 @@ class Particle {
 
   // Method to display
   display() {
-    stroke(200, this.lifespan);
+    stroke(this.c.levels[0], this.c.levels[1], this.c.levels[2], this.lifespan);
     strokeWeight(2);
-    fill(127, this.lifespan);
-    ellipse(this.position.x, this.position.y, 12, 12);
+    fill(this.c.levels[0], this.c.levels[1], this.c.levels[2], this.lifespan);
+    rect(this.position.x, this.position.y, 15, 5);
   }
 
   // Is the particle still useful?

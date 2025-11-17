@@ -7,6 +7,19 @@ function setup() {
 
 function draw() {
   background(51);
+
+  noCursor();
+
+  rectMode(CENTER);
+  fill(0);
+  rect(mouseX, mouseY, 15, 5);
+
+  let gravity = createVector(0, 0.1);
+  system.applyForce(gravity);
+
+  let wind = createVector(random(-0.1, 0.1), -0.05);
+  system.applyForce(wind);
+
   system.setPosition(createVector(mouseX, mouseY));
   system.run();
 }
