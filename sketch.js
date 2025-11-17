@@ -1,4 +1,5 @@
 let system;
+let moneyCount = 0;
 
 function setup() {
   createCanvas(720, 400);
@@ -22,10 +23,18 @@ function draw() {
 
   system.setPosition(createVector(mouseX, mouseY));
   system.run();
+
+
+  //textAlign(RIGHT, TOP);
+  textSize(16);
+  fill(255);
+  text("계좌 잔고: ", 550, 20);
+  text(moneyCount + "원", 620, 20);
 }
 
 function mouseReleased() {
   for (let i = 0; i < 10; i++) {
     system.addParticle();
   }
+  moneyCount += 100000;
 }
